@@ -1,30 +1,30 @@
 import axios from 'axios';
 import API_URL from '../constants';
 
-const fetchPost = (data) => {
+const fetchComment = (data) => {
     
 }
 
-const fetchPosts = (data) => {
+const fetchComments = (data) => {
     
 }
 
-const createPost = (data) => {
+const createComment = (data) => {
     
 }
 
-const editPost = (data) => {
+const editComment = (data) => {
 
 }
 
-const deletePost = (data) => {
+const deleteComment = (data) => {
 
 }
 
 export {
-    fetchPost,
-    fetchPosts,
-    createPost,
-    editPost,
-    deletePost
+    fetchComment,
+    fetchComments,
+    createComment,
+    editComment,
+    deleteComment
 }

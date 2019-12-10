@@ -1,10 +1,13 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import NavBar from './components/Layout/NavBar';
+import Routes from './config/routes';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hi</h1>
+      <NavBar />
+      <Routes />
     </div>
   );
 }
