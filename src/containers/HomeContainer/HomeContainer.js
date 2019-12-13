@@ -1,19 +1,29 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { fetchPosts } from '../../actions/postActions';
 import HomeComponent from '../../components/HomeComponent/HomeComponent';
+import PostInputContainer from '../PostInputContainer/PostInputContainer';
 
 class Home extends React.Component {
-    state = {
 
-    };
+    componentDidMount = () => {
+        this.props.fetchPosts()
+    }
     
     render() {
         return (
             <>
-                <div>This is the home container</div>
+                <PostInputContainer />
                 <HomeComponent />
             </>
         );
     };
 };
 
-export default Home;
+const mapStateToProps = (state) => {
+    return {
+        posts: state.postReducer.posts
+    };
+};
+
+export default connect(mapStateToProps, { fetchPosts })(Home);

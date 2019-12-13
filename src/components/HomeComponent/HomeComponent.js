@@ -5,8 +5,8 @@ import { fetchPosts } from '../../actions/postActions';
 const mapPosts = (posts) => {
     const postArray = posts.map(post => 
         <div>
-            <img src={ post.image }/>
-            <p1>{ post.post_text }</p1>
+            <img src={ post.image } alt=""/>
+            <p>{ post.post_text }</p>
         </div>
     );
     return postArray;
