@@ -40,10 +40,10 @@ const createPost = (post_text, image) => {
     };
 };
 
-const editPost = (post_text, image, post_id) => {
+const editPost = (post_text, post_id) => {
     return dispatch => {
         return axios.put(`${ API_URL }/post/${ post_id }`,
-        { post_text, image }, { withCredentials: true })
+        { post_text }, { withCredentials: true })
             .then(res => {
                 dispatch({ type: 'EDIT_POST_FULFILLED' })
             })

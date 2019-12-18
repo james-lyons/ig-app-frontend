@@ -6,24 +6,36 @@ import PostContainer from "../PostContainer/PostContainer";
 
 class Home extends React.Component {
   state = {
-    edit_review_display: "none"
+    editPostDisplay: "none",
+    postText: "",
   }
 
   componentDidMount = () => {
     this.props.fetchPosts();
   };
 
-  editReviewDisplay = () => {
-    this.state.edit_review_display === "none" ?
-    this.setState({ edit_review_display: "" }) :
-    this.setState({ edit_review_display: "none"});
-};
+  handlePostEdit = (event) => {
+    this.setState({
+        reviewText: event.target.value
+    });
+  };
+
+  handleEditPostDisplay = () => {
+    this.state.editPostDisplay === "none" ?
+    this.setState({ editPostDisplay: "" }) :
+    this.setState({ editPostDisplay: "none"});
+  };
 
   render() {
     return (
       <>
         <PostContainer />
-        <FeedComponent editReviewDisplay={ this.editReviewDisplay } />
+        <FeedComponent
+          editPostDisplay= { this.state.editPostDisplay }
+          postText={ this.state.postText }
+          handleEditPostDisplay={ this.handleEditPostDisplay }
+          handlePostEdit={ this.handlePostEdit }
+        />
       </>
     );
   }
