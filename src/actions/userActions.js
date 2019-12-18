@@ -22,9 +22,9 @@ const userLogin = data => {
     return axios
       .post(`${API_URL}/auth/login`, data, { withCredentials: true })
       .then(res => {
+        localStorage.setItem("uid", res.data.id);
+        dispatch({ type: "USER_LOGIN_FULFILLED", payload: res.data });
         window.location.reload();
-        localStorage.setItem("uid", res.data.data._id);
-        dispatch({ type: "USER_LOGIN_FULFILLED", payload: res.data.data });
       })
       .catch(err => {
         console.log("this is the err", err);

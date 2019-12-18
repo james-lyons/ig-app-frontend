@@ -6,6 +6,7 @@ import { userLogout } from "../../actions/userActions";
 
 const NavBar = props => {
   const currentUser = localStorage.getItem("uid");
+
   const links = (
     <Navbar bg="light" expand="lg">
       <Nav.Link as={Link} to="/">
@@ -13,6 +14,7 @@ const NavBar = props => {
       </Nav.Link>
     </Navbar>
   );
+  
   const authLinks = (
     <Navbar bg="light" expand="lg">
       <Nav.Link as={Link} to="/feed">

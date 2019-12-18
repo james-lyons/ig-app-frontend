@@ -1,4 +1,4 @@
-function userReducer(
+function postReducer(
   state = {
     post: {
       post_text: "",
@@ -52,4 +52,4 @@ function userReducer(
   }
 }
 
-export default userReducer;
+export default postReducer;

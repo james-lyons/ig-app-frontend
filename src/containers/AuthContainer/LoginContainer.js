@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from 'react-router'
 import { connect } from "react-redux";
 import { Button } from "react-bootstrap";
 import LoginComponent from "../../components/Auth/Login";
@@ -24,6 +25,7 @@ class Login extends React.Component {
       password: this.state.password
     };
     this.props.userLogin(user);
+    this.props.history.push('/feed');
   };
 
   handleModalShow = () => {
@@ -52,4 +54,4 @@ class Login extends React.Component {
   }
 }
 
-export default connect(null, { userLogin })(Login);
+export default withRouter(connect(null, { userLogin })(Login));

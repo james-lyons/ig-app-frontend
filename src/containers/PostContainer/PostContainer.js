@@ -3,17 +3,10 @@ import { connect } from "react-redux";
 import { createPost } from "../../actions/postActions";
 
 class PostInputContainer extends React.Component {
-<<<<<<< HEAD
-    state = {
-        post_text: "",
-        image: ""
-    };
-=======
   state = {
     post_text: "",
     image: ""
   };
->>>>>>> 37e3ab6c5d7a5eb82527f0eb8852ac13e58a5d5b
 
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });

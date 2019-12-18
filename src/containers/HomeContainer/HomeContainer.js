@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchPosts } from "../../actions/postActions";
 import FeedComponent from "../../components/FeedComponent/FeedComponent";
-import PostInputContainer from "../PostInputContainer/PostInputContainer";
+import PostContainer from "../PostContainer/PostContainer";
 
 class Home extends React.Component {
   componentDidMount = () => {
@@ -12,7 +12,7 @@ class Home extends React.Component {
   render() {
     return (
       <>
-        <PostInputContainer />
+        <PostContainer />
         <FeedComponent />
       </>
     );
