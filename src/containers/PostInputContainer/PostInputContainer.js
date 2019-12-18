@@ -6,7 +6,7 @@ class PostInputContainer extends React.Component {
     state = {
         post_text: "",
         image: ""
-    }
+    };
 
     handleChange = (event) => {
         this.setState({[event.target.name]: event.target.value })
