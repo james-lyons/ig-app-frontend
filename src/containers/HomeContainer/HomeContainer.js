@@ -5,15 +5,25 @@ import FeedComponent from "../../components/FeedComponent/FeedComponent";
 import PostContainer from "../PostContainer/PostContainer";
 
 class Home extends React.Component {
+  state = {
+    edit_review_display: "none"
+  }
+
   componentDidMount = () => {
     this.props.fetchPosts();
   };
+
+  editReviewDisplay = () => {
+    this.state.edit_review_display === "none" ?
+    this.setState({ edit_review_display: "" }) :
+    this.setState({ edit_review_display: "none"});
+};
 
   render() {
     return (
       <>
         <PostContainer />
-        <FeedComponent />
+        <FeedComponent editReviewDisplay={ this.editReviewDisplay } />
       </>
     );
   }

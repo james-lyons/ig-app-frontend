@@ -1,12 +1,15 @@
 function postReducer(
   state = {
     post: {
+      _id: "",
+      user: "",
       post_text: "",
       image: ""
     },
     posts: [
       {
         _id: "",
+        user: "",
         post_text: "",
         image: ""
       }
